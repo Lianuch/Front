@@ -7,19 +7,22 @@ import Button from "./components/Button/Button"
 import Contacts from "./components/Contacts"
 import Price from "./components/Price"
 import AnchorButton from "./components/Button/AnchorButton"
+import Register from "./components/Forms/Register"
+import Login from "./components/Forms/Login"
 export default function App() {
   return (
-    <h1 className="text-3xl font-bold">
+    <>
       <NavBar/>
       <Button/>
-      <AnchorButton/>
       <HeroSection/>
       <About/>
       <Team/>
-      {/* <Price/> */}
+      <Price list={[{title: 'Senior'}, {title: 'Barber'}, {title: 'Junior'}]}/>
       <Contacts/>
       <Footer/>
+     {/* <Login/> */}
+     {/* <Register/> */}
 
-    </h1>
+    </>
   )
 }

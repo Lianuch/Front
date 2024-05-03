@@ -8,8 +8,7 @@ const NavBar = () => {
     }
   }
   return (
-    <>
-      <div className="bg-neutral-900">
+      <div id="navbar" className="bg-neutral-900">
         <div className="hidden md:flex font-light container px-2 py-1 mx-auto text-white justify-between">
           <ul className="flex">
             <li className="hover:scale-110 flex items-center px-2 py-2">
@@ -27,7 +26,7 @@ const NavBar = () => {
           </ul>
           <div>
             <ul className="flex">
-              <li className="hover:scale-110 flex items-center px-2 py-2"><a href="">Login</a></li>
+              <li className="hover:scale-110 flex items-center px-2 py-2"><a href="">Sign in</a></li>
               <li className="hover:scale-110 flex items-center px-2 py-2"><a href="">Register</a></li>
             </ul>
           </div>
@@ -46,7 +45,6 @@ const NavBar = () => {
           </ul>
         </div>
       </div>
-    </>
   );
 };
 
