@@ -6,9 +6,9 @@ import Footer from "./components/Footer"
 import Button from "./components/Button/Button"
 import Contacts from "./components/Contacts"
 import Price from "./components/Price"
-import AnchorButton from "./components/Button/AnchorButton"
 import Register from "./components/Forms/Register"
 import Login from "./components/Forms/Login"
+import Record from "./components/Forms/Record"
 export default function App() {
   return (
     <>
@@ -22,7 +22,7 @@ export default function App() {
       <Footer/>
      {/* <Login/> */}
      {/* <Register/> */}
-
+     {/* <Record/> */}
     </>
   )
 }

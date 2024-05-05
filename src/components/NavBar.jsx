@@ -8,8 +8,8 @@ const NavBar = () => {
     }
   }
   return (
-      <div id="navbar" className="bg-neutral-900">
-        <div className="hidden md:flex font-light container px-2 py-1 mx-auto text-white justify-between">
+      <div id="navbar" className="bg-neutral-900 text-xl">
+        <div className="hidden md:flex font-light container px-2 py-2 mx-auto text-white  justify-between">
           <ul className="flex">
             <li className="hover:scale-110 flex items-center px-2 py-2">
               <a href="#" onClick={()=>scrollToSection("about")}>About</a>
@@ -27,7 +27,7 @@ const NavBar = () => {
           <div>
             <ul className="flex">
               <li className="hover:scale-110 flex items-center px-2 py-2"><a href="">Sign in</a></li>
-              <li className="hover:scale-110 flex items-center px-2 py-2"><a href="">Register</a></li>
+              <li className="hover:scale-110 flex items-center px-2 py-2"><a href="">Sign up</a></li>
             </ul>
           </div>
         </div>
@@ -41,7 +41,7 @@ const NavBar = () => {
               </li>
             <li className="flex items-center px-2 py-2"><a href="">Price</a></li>
             <li className="flex items-center px-2 py-2"><a href="">Contacts</a></li>
-            <li className="flex items-center px-2 py-2"><a href="">Register</a></li>
+            <li className="flex items-center px-2 py-2"><a href="">Sign up</a></li>
           </ul>
         </div>
       </div>
