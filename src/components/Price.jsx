@@ -10,7 +10,7 @@ const Price = ({list}) => {
 
   return (
     
-    <div id='price' className='h-96 bg-temp text-white bg-fixed  p-4'>
+    <div id='price' className='bg-no-repeat text-xl bg-cover bg-temp text-white bg-fixed  p-4'>
         <h1 className='text-4xl text-center'>Price</h1>
         <div className="container mt-2 flex justify-center text-left">
             <div className="order-2 border border-white p-5">
