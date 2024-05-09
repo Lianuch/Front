@@ -55,7 +55,7 @@ const Record = () => {
   const [modalActive, setModalActive] = useState(true); 
 
   return (
-    <div>
+    <div className="z-10">
       {/* <Button active={modalActive} setActive={setModalActive} /> */}
       <Modal active={modalActive} setActive={setModalActive} />
     </div>

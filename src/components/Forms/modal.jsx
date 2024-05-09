@@ -1,21 +1,32 @@
-// import React from 'react'
-
-// const modal = ({children, open}) => {
-//   return (
-//     <dialog open={open}>
-//         {children}
-//     </dialog>
-//   )
-// }
-
-// export default modal
 import React from "react";
 import "../Forms/modal.css";
-
-const modal = ({ active, setActive }) => {
+import { MdOutlineDateRange } from "react-icons/md";
+import Calendar from "../Forms/Calendar";
+import { useState,useEffect } from "react";
+const Modal = ({ active, setActive }) => {
   const closeModal = () => {
     setActive(false);
   };
+
+  const [openCal,setOpenCal] = useState(false);
+  function openCalendar(){
+    setOpenCal(true)
+  }
+  function closeCalendar(){
+    setOpenCal(false)
+  }
+  
+  useEffect(()=>{
+    if(active){
+      document.body.classList.add("modal-open");
+    }
+    else{
+      document.body.classList.remove("modal-open");
+    }
+    return()=>{
+      document.body.classList.remove("modal-open")
+    }
+  },[active])
 
   return (
     <div onClick={closeModal} className={active ? "modal active" : "modal"}>
@@ -32,9 +43,10 @@ const modal = ({ active, setActive }) => {
 
         <option value="f"></option>
         <label className="mt-1 mr-2" for="">
-          Choose date & time:
+          Choose date & time:<MdOutlineDateRange  onClick={openCalendar} className="inline-block ml-2" />
+
+          {openCal && <Calendar onClose={closeCalendar}/>}
         </label>
-        <input type="datetime-local" id="date" name="date" />
 
         <br />
         <label className="mt-2" for="">
@@ -44,10 +56,10 @@ const modal = ({ active, setActive }) => {
           <option value="service1">Haircut</option>
           <option value="service2">Beard</option>
         </select>
-        <button className="block mt-2 border bg-slate-200 border-slate-600 p-1 rounded-md text-xl font-medium">Confirm</button>
+        <button onClick={closeModal} className="block mt-2 border bg-slate-200 border-slate-600 p-1 rounded-md text-xl font-medium">Confirm</button>
       </div>
     </div>
   );
 };
 
-export default modal;
+export default Modal;

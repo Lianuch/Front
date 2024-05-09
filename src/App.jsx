@@ -8,13 +8,14 @@ import Contacts from "./components/Contacts"
 import Price from "./components/Price"
 import Register from "./components/Forms/Register"
 import Login from "./components/Forms/Login"
-import Record from "./components/Forms/Record"
 export default function App() {
+
   return (
     <>
+
       <NavBar/>
       <Button/>
-      <HeroSection/>
+      <HeroSection />
       <About/>
       <Team/>
       <Price list={[{title: 'Senior'}, {title: 'Barber'}, {title: 'Junior'}]}/>
@@ -22,7 +23,6 @@ export default function App() {
       <Footer/>
      {/* <Login/> */}
      {/* <Register/> */}
-     {/* <Record/> */}
     </>
   )
 }
