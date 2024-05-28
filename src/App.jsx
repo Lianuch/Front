@@ -11,7 +11,7 @@ import Login from "./components/Forms/Login"
 export default function App() {
 
   return (
-    <>
+    <div className="overflow-hidden">
 
       <NavBar/>
       <Button/>
@@ -23,6 +23,6 @@ export default function App() {
       <Footer/>
      {/* <Login/> */}
      {/* <Register/> */}
-    </>
+    </div>
   )
 }

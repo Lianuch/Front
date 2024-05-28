@@ -29,28 +29,27 @@ const Modal = ({ active, setActive }) => {
   },[active])
 
   return (
-    <div onClick={closeModal} className={active ? "modal active" : "modal"}>
-      <div onClick={(e) => e.stopPropagation()} className="modal_content ">
+    <div onClick={closeModal} className={active ? "fixed inset-0 flex justify-center items-center bg-black/30" : "hidden"}>
+      <div onClick={(e) => e.stopPropagation()} className="p-5 border border-solid shadow-md border-gray-400 rounded-xl bg-white transition-all duration-400    ">
         <h1 className="text-2xl font-bold">Barbie Barbershop</h1>
         <p className="font-medium	">Lviv</p>
 
-        <label for="master" className="mr-2"> Choose master:</label>
-        <select id="master" name="master">
+        <label  className="mr-2"> Choose master:</label>
+        <select  name="master">
           <option value="master1">Senior</option>
           <option value="master2">Barber</option>
           <option value="master3">Junior</option>
         </select>
 
-        <option value="f"></option>
-        <label className="mt-1 mr-2" for="">
+        <label className="block mr-2" for="">
           Choose date & time:<MdOutlineDateRange  onClick={openCalendar} className="inline-block ml-2" />
 
           {openCal && <Calendar onClose={closeCalendar}/>}
         </label>
 
-        <br />
-        <label className="mt-2" for="">
-          <span className="">Choose favor: </span>
+        
+        <label className="mt-2" >
+          <span  className="">Choose favor: </span>
         </label>
         <select id="service" name="service">
           <option value="service1">Haircut</option>

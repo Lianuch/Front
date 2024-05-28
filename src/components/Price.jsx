@@ -18,7 +18,7 @@ const Price = ({list}) => {
       <div data-aos="zoom-in-up" >
         <h1 className='text-4xl text-center'  >Price</h1>
         <div className="container mt-2 flex justify-center text-left"  >
-            <div className="order-2 border border-white p-5">
+            <div className="order-2 border overflow-auto border-white p-5">
               <table className='table-auto border-collapse border border-white'>
                 <thead className='border'>
                   <tr className=''>
