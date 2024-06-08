@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import LinearProgress from '@mui/material/LinearProgress';
 import Aos from "aos";
 import "aos/dist/aos.css";
 import { fetchTeamInfo } from "../services/barbie"; 
@@ -21,7 +22,7 @@ const Team = () => {
   }, []);
 
   if (!team) {
-    return <p>Loading...</p>;
+    return <LinearProgress />
   }
 
   return (
@@ -31,7 +32,7 @@ const Team = () => {
         <div className="grid grid-cols-12 p-4">
           {team.map((barber, index) => (
             <div key={index} className="sm:col-span-3 col-span-6 text-center">
-              <div className={`inline-block rounded-full w-32 h-32 bg-${barber.color || 'cyan'}-700 p-10 transition-transform duration-300 hover:scale-110`}></div>
+              <div className={`inline-block rounded-full w-32 h-32 bg-cyan-700 p-10 transition-transform duration-300 hover:scale-110`}></div>
               <h1 className="text-4xl">{barber.name}</h1>
               <p className="text-xl">{barber.barberClass}</p>
             </div>
