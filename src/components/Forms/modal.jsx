@@ -4,7 +4,8 @@ import { MdOutlineDateRange } from "react-icons/md";
 import Calendar from "../Forms/Calendar";
 import ProgressBar from "../Forms/ProgressBar";
 
-const Modal = ({ active, setActive }) => {
+const Modal = ({ active, setActive}) => {
+ 
   const closeModal = () => {
     setActive(false);
   };
@@ -50,14 +51,13 @@ const Modal = ({ active, setActive }) => {
         <p className="font-medium pb-2">Lviv</p>
 
         <ProgressBar activeStep={activeStep} />
-
+  
         {activeStep === 0 && (
           <div className="pt-1">
             <label className="mr-2 ">Choose master:</label>
             <select name="master">
-              <option value="master1">Senior</option>
-              <option value="master2">Barber</option>
-              <option value="master3">Junior</option>
+            <option >barber.barberClass</option>
+
             </select>
             <div className="flex justify-end">
             <button onClick={handleNext} className="block mt-2 border bg-slate-200 border-slate-600 p-1 rounded-md text-xl font-medium">Next</button>

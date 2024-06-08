@@ -1,29 +1,7 @@
 import React, { useState, useEffect } from "react";
-import LinearProgress from '@mui/material/LinearProgress';
-import Aos from "aos";
 import "aos/dist/aos.css";
-import { fetchTeamInfo } from "../services/barbie"; 
-const Team = () => {
-  const [team, setTeam] = useState(null);
-
-  useEffect(() => {
-    Aos.init({ duration: 2000 });
-
-    const fetchData = async () => {
-      try {
-        let data = await fetchTeamInfo();
-        setTeam(data);
-      } catch (e) {
-        console.error("Failed to fetch team info:", e);
-      }
-    };
-
-    fetchData();
-  }, []);
-
-  if (!team) {
-    return <LinearProgress />
-  }
+const Team = ({team}) => {
+ 
 
   return (
     <div id="team" className="bg-black text-white pb-4">

@@ -8,19 +8,11 @@ import Contacts from "./components/Contacts"
 import Price from "./components/Price"
 import Register from "./components/Forms/Register"
 import Login from "./components/Forms/Login"
-// import { useEffect,useState } from "react"
-// import { fetchTeamInfo } from "./services/barbie"
+import TeamDataProvider from "./components/DataProvider/TeamDataProvider"
+
 export default function App() {
 
-//   const [barberClass,setbarberClass] = useState(null);
-//  useEffect(()=>{
-//   const fetchData = async ()=>{
-//    let data = await fetchTeamInfo();
-//    console.log(data);
-//   }
-//   fetchData();
- 
-// },[])
+
   return (
     <div className="overflow-hidden">
      
@@ -29,7 +21,9 @@ export default function App() {
       <HeroSection />
       <About/>
       
-      <Team />
+      <TeamDataProvider>
+      {(team) => <Team team={team} />}
+      </TeamDataProvider>
       <Price list={[{title: 'Senior'}, {title: 'Barber'}, {title: 'Junior'}]}/>
       <Contacts/>
       <Footer/>
