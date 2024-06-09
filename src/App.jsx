@@ -1,34 +1,21 @@
-import About from "./components/About"
-import HeroSection from "./components/HeroSection"
-import NavBar from "./components/NavBar"
-import Team from "./components/Team"
-import Footer from "./components/Footer"
-import Button from "./components/Button/Button"
-import Contacts from "./components/Contacts"
-import Price from "./components/Price"
 import Register from "./components/Forms/Register"
 import Login from "./components/Forms/Login"
-import TeamDataProvider from "./components/DataProvider/TeamDataProvider"
+
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import HomePage from "./components/Pages/HomePage"
 
 export default function App() {
-
-
   return (
-    <div className="overflow-hidden">
+    <>
+      <BrowserRouter>
+      <Routes>
+        <Route path='/' element={ <HomePage/>}/>
+        <Route path='/Login' element={<Login/> }/>
+        <Route path='/Register' element={<Register/> }/>
+      </Routes>
+      </BrowserRouter>
      
-      <NavBar/>
-      <Button/>
-      <HeroSection />
-      <About/>
-      
-      <TeamDataProvider>
-      {(team) => <Team team={team} />}
-      </TeamDataProvider>
-      <Price list={[{title: 'Senior'}, {title: 'Barber'}, {title: 'Junior'}]}/>
-      <Contacts/>
-      <Footer/>
-     {/* <Login/> */}
-     {/* <Register/> */}
-    </div>
+    </>
+   
   )
 }

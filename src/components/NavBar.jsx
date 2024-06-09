@@ -1,8 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { useState } from "react";
-import Login from "./Forms/Login"
-import Register from "./Forms/Register"
+import { Link } from "react-router-dom";
+
 
 const NavBar = () => {
   const scrollToSection = (sectionId)=>{
@@ -12,11 +11,6 @@ const NavBar = () => {
     }
   }
 
-  const [openSign,setOpenSign] = useState(false);
-
-  function openSignPage(){
-    setOpenSign(true)
-  }
   return (
       <div  id="navbar" className="bg-neutral-900 text-xl">
         <motion.div initial={{x:"-250vw"}}  animate={{x:-1}} transition={{delay:0.12,type:"spring", stiffness:12}}  className="hidden md:flex font-light container px-2 py-2 mx-auto text-white  justify-between">
@@ -37,12 +31,11 @@ const NavBar = () => {
           <div>
             <ul className="flex">
               <li className="hover:scale-110 flex items-center px-2 py-2">
-                <a onClick={openSignPage} href="">Sign in</a>
-                {openSign && <Login/>}
+              <Link to="/login">Sign in</Link>
                 </li>
-              <li onClick={openSignPage} className="hover:scale-110 flex items-center px-2 py-2">
-                <a href="">Sign up</a>
-                {openSign && <Register/>}
+              <li className="hover:scale-110 flex items-center px-2 py-2">
+              <Link to="/register">Sign Up</Link>
+
                 </li>
             </ul>
           </div>
